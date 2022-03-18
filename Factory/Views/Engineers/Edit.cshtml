@@ -11,7 +11,7 @@
 {
   @Html.HiddenFor(model => model.EngineerId)
   <h3>@Html.LabelFor(model => model.EngineerName, "Engineer Name:")</h3>
-  @Html.EditorFor(model => model.EngineerName, new { @required = "" } )<br><br>
+  @Html.EditorFor(model => model.EngineerName, new { htmlAttributes = new { @required="required" } } )<br><br>
   <input type="submit" value="Save" />
 }
 <hr/>

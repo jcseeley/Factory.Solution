@@ -9,7 +9,7 @@
 @using (Html.BeginForm())
 {
   <h3>Engineer Name:</h3>
-  @Html.TextBoxFor(model => model.EngineerName)
+  @Html.EditorFor(model => model.EngineerName, new { htmlAttributes = new { @required="required" } })
   <br><br>
   <input type="submit" value="Add Engineer" />
 }
