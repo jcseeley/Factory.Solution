@@ -1,6 +1,7 @@
 using Factory.Models;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -42,6 +43,21 @@ namespace Factory.Controllers
         .FirstOrDefault(engineer => engineer.EngineerId == id);
       ViewBag.PageTitle = "Engineer Details";
       return View(engineer);
+    }
+
+    public ActionResult Edit(int id)
+    {
+      Engineer engineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      ViewBag.PageTitle = "Edit Engineer";
+      return View(engineer);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Engineer engineer)
+    {
+      _db.Entry(engineer).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
