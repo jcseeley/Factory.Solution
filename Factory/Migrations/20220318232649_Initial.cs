@@ -34,25 +34,25 @@ namespace Factory.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "EngineerMachines",
+                name: "RepairLicenses",
                 columns: table => new
                 {
-                    EngineerMachineId = table.Column<int>(type: "int", nullable: false)
+                    RepairLicenseId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     EngineerId = table.Column<int>(type: "int", nullable: false),
                     MachineId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_EngineerMachines", x => x.EngineerMachineId);
+                    table.PrimaryKey("PK_RepairLicenses", x => x.RepairLicenseId);
                     table.ForeignKey(
-                        name: "FK_EngineerMachines_Engineers_EngineerId",
+                        name: "FK_RepairLicenses_Engineers_EngineerId",
                         column: x => x.EngineerId,
                         principalTable: "Engineers",
                         principalColumn: "EngineerId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_EngineerMachines_Machines_MachineId",
+                        name: "FK_RepairLicenses_Machines_MachineId",
                         column: x => x.MachineId,
                         principalTable: "Machines",
                         principalColumn: "MachineId",
@@ -60,20 +60,20 @@ namespace Factory.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_EngineerMachines_EngineerId",
-                table: "EngineerMachines",
+                name: "IX_RepairLicenses_EngineerId",
+                table: "RepairLicenses",
                 column: "EngineerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_EngineerMachines_MachineId",
-                table: "EngineerMachines",
+                name: "IX_RepairLicenses_MachineId",
+                table: "RepairLicenses",
                 column: "MachineId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "EngineerMachines");
+                name: "RepairLicenses");
 
             migrationBuilder.DropTable(
                 name: "Engineers");

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Factory.Migrations
 {
     [DbContext(typeof(FactoryContext))]
-    [Migration("20220318200203_Initial")]
+    [Migration("20220318232649_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,27 +32,6 @@ namespace Factory.Migrations
                     b.ToTable("Engineers");
                 });
 
-            modelBuilder.Entity("Factory.Models.EngineerMachine", b =>
-                {
-                    b.Property<int>("EngineerMachineId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int>("EngineerId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MachineId")
-                        .HasColumnType("int");
-
-                    b.HasKey("EngineerMachineId");
-
-                    b.HasIndex("EngineerId");
-
-                    b.HasIndex("MachineId");
-
-                    b.ToTable("EngineerMachines");
-                });
-
             modelBuilder.Entity("Factory.Models.Machine", b =>
                 {
                     b.Property<int>("MachineId")
@@ -67,7 +46,28 @@ namespace Factory.Migrations
                     b.ToTable("Machines");
                 });
 
-            modelBuilder.Entity("Factory.Models.EngineerMachine", b =>
+            modelBuilder.Entity("Factory.Models.RepairLicense", b =>
+                {
+                    b.Property<int>("RepairLicenseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int>("EngineerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MachineId")
+                        .HasColumnType("int");
+
+                    b.HasKey("RepairLicenseId");
+
+                    b.HasIndex("EngineerId");
+
+                    b.HasIndex("MachineId");
+
+                    b.ToTable("RepairLicenses");
+                });
+
+            modelBuilder.Entity("Factory.Models.RepairLicense", b =>
                 {
                     b.HasOne("Factory.Models.Engineer", "Engineer")
                         .WithMany("JoinEntities")

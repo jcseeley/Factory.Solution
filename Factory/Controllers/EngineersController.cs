@@ -69,13 +69,22 @@ namespace Factory.Controllers
     }
 
     [HttpPost]
-    public ActionResult AddMachine(Engineer engineer, int MachineId)
+    public ActionResult AddMachine(Engineer engineer, int machineId)
     {
-      if (MachineId != 0)
+      if (machineId != 0)
       {
-        _db.EngineerMachines.Add(new EngineerMachine() { MachineId = MachineId, EngineerId = engineer.EngineerId });
+        _db.RepairLicenses.Add(new RepairLicense() { MachineId = machineId, EngineerId = engineer.EngineerId });
         _db.SaveChanges();
       }
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public ActionResult DeleteMachine(int joinId)
+    {
+      RepairLicense joinEntry = _db.RepairLicenses.FirstOrDefault(entry => entry.RepairLicenseId == joinId);
+      _db.RepairLicenses.Remove(joinEntry);
+      _db.SaveChanges();
       return RedirectToAction("Index");
     }
   }
