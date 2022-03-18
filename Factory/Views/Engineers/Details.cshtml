@@ -2,6 +2,7 @@
   Layout = "_Layout";
 }
 
+@using Factory.Models
 @model Factory.Models.Engineer
 
 <h1>@Html.DisplayFor(model => model.EngineerName)'s Details</h1>
@@ -13,7 +14,7 @@
 else
 {
   <h2>Licensed to Repair:</h2>
-  @foreach(var join in Model.JoinEntities)
+  @foreach(RepairLicense join in Model.JoinEntities)
   {
     <h3>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId })</h3>
     {
