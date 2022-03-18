@@ -17,9 +17,21 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
-      List<Engineer> model = _db.Engineers.ToList();
       ViewBag.PageTitle = "Engineers";
-      return View(model);
+      return View(_db.Engineers.ToList());
+    }
+    public ActionResult Create()
+    {
+      ViewBag.PageTitle = "Add Engineer";
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Engineer engineer)
+    {
+      _db.Engineers.Add(engineer);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }

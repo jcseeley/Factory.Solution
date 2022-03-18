@@ -5,7 +5,7 @@
 <h1>Factory Manager</h1>
 <hr/>
 <p>Welcome, Dr. Sillystringz! Thanks for choosing us as your factory management solution! We're happy to have you! Our service allows you to easily view, edit, add, and remove both machines and engineers all in one place!</p>
-<hr/>
+<br>
 
 @using Factory.Models;
 
@@ -13,7 +13,7 @@
 <hr/>
 @if (@ViewBag.Engineers.Count == 0)
 {
-  <h2>No Engineers Added</h2>
+  <h3>No Engineers Added</h3>
 }
 else
 {
@@ -23,14 +23,13 @@ else
   }
 }
 <hr/>
-<p>Click @Html.ActionLink("here", "Index", "Engineers") to manage your engineers.</p>
 <br>
 
 <h2>Machines:</h2>
 <hr/>
 @if (@ViewBag.Machines.Count == 0)
 {
-  <h2>No Machines Added</h2>
+  <h3>No Machines Added</h3>
 }
 else
 {
@@ -40,4 +39,3 @@ else
   }
 }
 <hr/>
-<p>Click @Html.ActionLink("here", "Index", "Machines") to manage your machines.</p>

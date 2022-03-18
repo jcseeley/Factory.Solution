@@ -1,13 +1,16 @@
 body {
   background-color: aqua;
+  text-align: center;
 }
 
-div#footer {
+.container {
+  margin-top: 60px;
+}
+
+div#header {
   position:fixed;
-  bottom:0px;
-  left:0px;
+  top:10px;
+  left: 0px;
   width:100%;
-  color:#CCC;
-  background:#333;
-  padding:8px;
+  text-align: center;
 }
