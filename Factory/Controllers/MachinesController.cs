@@ -88,5 +88,25 @@ namespace Factory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Details", new { id = joinEntry.MachineId });
     }
+
+    public ActionResult Delete(int id)
+    {
+      Machine machine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      ViewBag.PageTitle = "Delete Machine";
+      return View(machine);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      Machine machine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      _db.Machines.Remove(machine);
+      foreach(RepairLicense join in machine.JoinEntities)
+      {
+        _db.RepairLicenses.Remove(join);
+      }
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }

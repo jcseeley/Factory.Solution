@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+<h1>Delete Machine</h1>
+<hr />
+<h2>Please confirm removal of "@Html.DisplayFor(model => model.MachineName)" and all repair licenses.</h2><br>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="CONFIRM" />
+}
+<hr />
+<h4>@Html.ActionLink($"Back to {Model.MachineName}'s Details", "Details", new { id = Model.MachineId })</h4>
