@@ -76,7 +76,7 @@ namespace Factory.Controllers
         _db.RepairLicenses.Add(new RepairLicense() { MachineId = machineId, EngineerId = engineer.EngineerId });
         _db.SaveChanges();
       }
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", new { id = engineer.EngineerId });
     }
 
     [HttpPost]
@@ -85,7 +85,7 @@ namespace Factory.Controllers
       RepairLicense joinEntry = _db.RepairLicenses.FirstOrDefault(entry => entry.RepairLicenseId == joinId);
       _db.RepairLicenses.Remove(joinEntry);
       _db.SaveChanges();
-      return RedirectToAction("Index");
+      return RedirectToAction("Details", new { id = joinEntry.EngineerId });
     }
 
     public ActionResult Delete(int id)
