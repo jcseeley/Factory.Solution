@@ -1,10 +1,13 @@
 body {
-  background-color: aqua;
+  background-image: url(https://images.unsplash.com/photo-1540984332767-405cdacc3eed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);
+  background-size: cover;
+  background-color: black;
   text-align: center;
 }
 
 .container {
   margin-top: 60px;
+  max-width: 350px;
 }
 
 .input {
