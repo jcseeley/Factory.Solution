@@ -3,13 +3,13 @@
 }
 
 @model Factory.Models.Engineer
-<h1>Delete Engineer</h1>
+<h2>Delete Engineer</h2>
 <hr />
-<h2>Please confirm removal of "@Html.DisplayFor(model => model.EngineerName)" and all repair licenses.</h2><br>
+<h3>Please confirm removal of "@Html.DisplayFor(model => model.EngineerName)" and all repair licenses.</h3><br>
 
 @using (Html.BeginForm())
 {
   <input type="submit" value="CONFIRM" />
 }
 <hr />
-<h4>@Html.ActionLink($"Back to {Model.EngineerName}'s Details", "Details", new { id = Model.EngineerId })</h4>
+<h5>@Html.ActionLink($"Back to {Model.EngineerName}'s Details", "Details", new { id = Model.EngineerId })</h5>

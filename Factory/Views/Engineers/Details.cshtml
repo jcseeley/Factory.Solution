@@ -5,18 +5,18 @@
 @using Factory.Models
 @model Factory.Models.Engineer
 
-<h1>@Html.DisplayFor(model => model.EngineerName)'s Details</h1>
+<h2>@Html.DisplayFor(model => model.EngineerName)'s Details</h2>
 <hr/>
 @if (Model.JoinEntities.Count == 0)
 {
-  <h3>No Repair Licenses</h3>
+  <h4>No Repair Licenses</h4>
 }
 else
 {
-  <h2>Licensed to Repair:</h2>
+  <h3>Licensed to Repair:</h3>
   @foreach(RepairLicense join in Model.JoinEntities)
   {
-    <h3>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId })</h3>
+    <h4>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId })</h4>
     @using (Html.BeginForm("DeleteMachine", "Engineers"))
     {
       @Html.Hidden("joinId", @join.RepairLicenseId)

@@ -4,11 +4,11 @@
 
 @model Factory.Models.Machine
 
-<h1>Add Machine</h1>
+<h2>Add Machine</h2>
 <hr/>
 @using (Html.BeginForm())
 {
-  <h3>Machine Name:</h3>
+  <h4>Machine Name:</h4>
   @Html.EditorFor(model => model.MachineName, new { htmlAttributes = new { @required="required" } })
   <br><br>
   <input type="submit" value="Add Machine" />

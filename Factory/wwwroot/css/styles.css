@@ -1,21 +1,32 @@
 body {
   background-image: url(https://images.unsplash.com/photo-1540984332767-405cdacc3eed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80);
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
   background-color: black;
   text-align: center;
+  font-family: 'Roboto Serif', serif;
+  font-family: 'Sansita Swashed', cursive;
+  font-family: 'Yuji Syuku', serif;
+  font-size: medium;
+  color: darkslategrey;
 }
 
 .container {
   margin-top: 60px;
-  max-width: 350px;
+  max-width: 30%;
 }
 
 .input {
   text-align: center;
 }
 
+a {
+  color: rgb(94, 42, 5);
+}
+
 div#header {
-  position:fixed;
+  position: fixed;
   top:10px;
   left: 0px;
   width:100%;

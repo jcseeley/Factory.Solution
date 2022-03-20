@@ -4,17 +4,17 @@
 
 @model Factory.Models.Machine
 
-<h1>Add Engineer</h1>
+<h2>Add Engineer</h2>
 <hr/>
-<h2>Machine: @Html.DisplayFor(model => model.MachineName)</h2>
+<h3>Machine: @Html.DisplayFor(model => model.MachineName)</h3>
 <hr/>
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MachineId)
 
-  <h3>Select Engineer:</h3>
+  <h4>Select Engineer:</h4>
   @Html.DropDownList("EngineerId")<br><br>
   <input type="submit" value="Save" />
 }
 <hr/>
-<h4>@Html.ActionLink($"Back to {Model.MachineName}'s Details", "Details", new { id = Model.MachineId })</h4>
+<h5>@Html.ActionLink($"Back to {Model.MachineName}'s Details", "Details", new { id = Model.MachineId })</h5>
