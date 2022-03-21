@@ -10,9 +10,9 @@
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.EngineerId)
-  <h4>@Html.LabelFor(model => model.EngineerName, "Engineer Name:")</h4>
+  <h3>@Html.LabelFor(model => model.EngineerName, "Engineer Name:")</h3>
   @Html.EditorFor(model => model.EngineerName, new { htmlAttributes = new { @required="required" } } )<br><br>
   <input type="submit" value="Save" />
 }
 <hr/>
-<h5>@Html.ActionLink($"Back to {Model.EngineerName}'s Details", "Details", new { id = Model.EngineerId })</h5>
+<h4>@Html.ActionLink($"Back to {Model.EngineerName}'s Details", "Details", new { id = Model.EngineerId })</h4>

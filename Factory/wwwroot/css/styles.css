@@ -8,27 +8,53 @@ body {
   font-family: 'Roboto Serif', serif;
   font-family: 'Sansita Swashed', cursive;
   font-family: 'Yuji Syuku', serif;
-  font-size: medium;
+  font-size: large;
   color: darkslategrey;
 }
 
 .container {
   margin-top: 60px;
-  max-width: 30%;
+  width: 450px;
+  height: 900px;
 }
 
-.input {
+input {
   text-align: center;
+  font-size: medium;
+  background-color: rgb(190, 190, 190);
 }
 
 a {
-  color: rgb(94, 42, 5);
+  color: rgb(78, 52, 33);
+}
+
+a:hover {
+  color: midnightblue;
 }
 
 div#header {
   position: fixed;
-  top:10px;
+  top: 10px;
   left: 0px;
-  width:100%;
+  width: 100%;
   text-align: center;
+}
+
+.header {
+  background-color: rgb(168, 168, 168);
+  font-style: normal;
+}
+
+button {
+  background-color: rgb(204, 204, 204);
+  font-style: italic;
+}
+
+hr {
+  border: 1px solid darkslategrey;
+}
+
+#silly {
+  font-weight: bolder;
+  font-style: italic;
 }

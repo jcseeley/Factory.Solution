@@ -4,13 +4,13 @@
 
 @model Factory.Models.Engineer
 
-<h2>Add Engineer</h2>
+<h1>Add Engineer</h1>
 <hr/>
 @using (Html.BeginForm())
 {
   <h3>Engineer Name:</h3>
   @Html.EditorFor(model => model.EngineerName, new { htmlAttributes = new { @required="required" } })
   <br><br>
-  <input type="submit" value="Add Engineer" />
+  <input type="submit" value="Add" />
 }
 <hr/>

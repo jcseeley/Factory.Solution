@@ -5,26 +5,26 @@
 @using Factory.Models
 @model Factory.Models.Engineer
 
-<h2>@Html.DisplayFor(model => model.EngineerName)'s Details</h2>
+<h2>@Html.DisplayFor(model => model.EngineerName)</h2>
 <hr/>
 @if (Model.JoinEntities.Count == 0)
 {
-  <h4>No Repair Licenses</h4>
+  <h3>No Repair Licenses</h3>
 }
 else
 {
   <h3>Licensed to Repair:</h3>
   @foreach(RepairLicense join in Model.JoinEntities)
   {
-    <h4>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId })</h4>
+    <h3>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId })</h3>
     @using (Html.BeginForm("DeleteMachine", "Engineers"))
     {
       @Html.Hidden("joinId", @join.RepairLicenseId)
-      <input type="submit" value="Remove License"/><br><br>
+      <input type="submit" value="Unlicense"/><br><br>
     }
   }
 }
 <hr/>
-<button>@Html.ActionLink("Add Repair License", "AddMachine", new { id = Model.EngineerId })</button>
-<button>@Html.ActionLink("Edit Engineer", "Edit", new { id = Model.EngineerId })</button>
-<button>@Html.ActionLink("Delete Engineer", "Delete", new { id = Model.EngineerId })</button>
+<button>@Html.ActionLink("ADD LICENSE", "AddMachine", new { id = Model.EngineerId })</button>
+<button>@Html.ActionLink("EDIT", "Edit", new { id = Model.EngineerId })</button>
+<button>@Html.ActionLink("DELETE", "Delete", new { id = Model.EngineerId })</button>

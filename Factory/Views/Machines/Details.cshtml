@@ -5,11 +5,11 @@
 @using Factory.Models
 @model Factory.Models.Machine
 
-<h2>@Html.DisplayFor(model => model.MachineName)'s Details</h2>
+<h2>The @Html.DisplayFor(model => model.MachineName)</h2>
 <hr/>
 @if (Model.JoinEntities.Count == 0)
 {
-  <h4>No Licensed Engineers</h4>
+  <h3>No Licensed Engineers</h3>
 }
 else
 {
@@ -20,11 +20,11 @@ else
     @using (Html.BeginForm("DeleteEngineer", "Machines"))
     {
       @Html.Hidden("joinId", @join.RepairLicenseId)
-      <input type="submit" value="Remove Engineer"/><br><br>
+      <input type="submit" value="Remove"/><br><br>
     }
   }
 }
 <hr/>
-<button>@Html.ActionLink("Add Engineer", "AddEngineer", new { id = Model.MachineId })</button>
-<button>@Html.ActionLink("Edit Machine", "Edit", new { id = Model.MachineId })</button>
-<button>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</button>
+<button>@Html.ActionLink("ADD ENGINEER", "AddEngineer", new { id = Model.MachineId })</button>
+<button>@Html.ActionLink("EDIT", "Edit", new { id = Model.MachineId })</button>
+<button>@Html.ActionLink("DELETE", "Delete", new { id = Model.MachineId })</button>

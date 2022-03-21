@@ -5,11 +5,11 @@
 @model Factory.Models.Machine
 <h2>Delete Machine</h2>
 <hr />
-<h3>Please confirm removal of "@Html.DisplayFor(model => model.MachineName)" and all repair licenses.</h3><br>
+<h4>Please confirm removal of "@Html.DisplayFor(model => model.MachineName)" and all repair licenses.</h4><br>
 
 @using (Html.BeginForm())
 {
-  <input type="submit" value="CONFIRM" />
+  <input type="submit" value="Confirm" />
 }
 <hr />
-<h5>@Html.ActionLink($"Back to {Model.MachineName}'s Details", "Details", new { id = Model.MachineId })</h5>
+<h4>@Html.ActionLink($"Back to {Model.MachineName}'s Details", "Details", new { id = Model.MachineId })</h4>
