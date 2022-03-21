@@ -27,7 +27,7 @@ namespace Factory.Migrations
 
                     b.HasKey("EngineerId");
 
-                    b.ToTable("Engineers");
+                    b.ToTable("engineers");
                 });
 
             modelBuilder.Entity("Factory.Models.Machine", b =>
@@ -41,7 +41,7 @@ namespace Factory.Migrations
 
                     b.HasKey("MachineId");
 
-                    b.ToTable("Machines");
+                    b.ToTable("machines");
                 });
 
             modelBuilder.Entity("Factory.Models.RepairLicense", b =>
@@ -62,7 +62,7 @@ namespace Factory.Migrations
 
                     b.HasIndex("MachineId");
 
-                    b.ToTable("RepairLicenses");
+                    b.ToTable("repair_licenses");
                 });
 
             modelBuilder.Entity("Factory.Models.RepairLicense", b =>

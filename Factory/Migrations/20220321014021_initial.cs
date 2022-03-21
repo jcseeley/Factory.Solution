@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Factory.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Engineers",
+                name: "engineers",
                 columns: table => new
                 {
                     EngineerId = table.Column<int>(type: "int", nullable: false)
@@ -17,11 +17,11 @@ namespace Factory.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Engineers", x => x.EngineerId);
+                    table.PrimaryKey("PK_engineers", x => x.EngineerId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Machines",
+                name: "machines",
                 columns: table => new
                 {
                     MachineId = table.Column<int>(type: "int", nullable: false)
@@ -30,11 +30,11 @@ namespace Factory.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Machines", x => x.MachineId);
+                    table.PrimaryKey("PK_machines", x => x.MachineId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "RepairLicenses",
+                name: "repair_licenses",
                 columns: table => new
                 {
                     RepairLicenseId = table.Column<int>(type: "int", nullable: false)
@@ -44,42 +44,42 @@ namespace Factory.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RepairLicenses", x => x.RepairLicenseId);
+                    table.PrimaryKey("PK_repair_licenses", x => x.RepairLicenseId);
                     table.ForeignKey(
-                        name: "FK_RepairLicenses_Engineers_EngineerId",
+                        name: "FK_repair_licenses_engineers_EngineerId",
                         column: x => x.EngineerId,
-                        principalTable: "Engineers",
+                        principalTable: "engineers",
                         principalColumn: "EngineerId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_RepairLicenses_Machines_MachineId",
+                        name: "FK_repair_licenses_machines_MachineId",
                         column: x => x.MachineId,
-                        principalTable: "Machines",
+                        principalTable: "machines",
                         principalColumn: "MachineId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_RepairLicenses_EngineerId",
-                table: "RepairLicenses",
+                name: "IX_repair_licenses_EngineerId",
+                table: "repair_licenses",
                 column: "EngineerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RepairLicenses_MachineId",
-                table: "RepairLicenses",
+                name: "IX_repair_licenses_MachineId",
+                table: "repair_licenses",
                 column: "MachineId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "RepairLicenses");
+                name: "repair_licenses");
 
             migrationBuilder.DropTable(
-                name: "Engineers");
+                name: "engineers");
 
             migrationBuilder.DropTable(
-                name: "Machines");
+                name: "machines");
         }
     }
 }

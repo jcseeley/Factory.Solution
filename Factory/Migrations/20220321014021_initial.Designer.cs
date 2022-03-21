@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Factory.Migrations
 {
     [DbContext(typeof(FactoryContext))]
-    [Migration("20220318232649_Initial")]
-    partial class Initial
+    [Migration("20220321014021_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -29,7 +29,7 @@ namespace Factory.Migrations
 
                     b.HasKey("EngineerId");
 
-                    b.ToTable("Engineers");
+                    b.ToTable("engineers");
                 });
 
             modelBuilder.Entity("Factory.Models.Machine", b =>
@@ -43,7 +43,7 @@ namespace Factory.Migrations
 
                     b.HasKey("MachineId");
 
-                    b.ToTable("Machines");
+                    b.ToTable("machines");
                 });
 
             modelBuilder.Entity("Factory.Models.RepairLicense", b =>
@@ -64,7 +64,7 @@ namespace Factory.Migrations
 
                     b.HasIndex("MachineId");
 
-                    b.ToTable("RepairLicenses");
+                    b.ToTable("repair_licenses");
                 });
 
             modelBuilder.Entity("Factory.Models.RepairLicense", b =>
