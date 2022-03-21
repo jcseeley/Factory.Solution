@@ -13,14 +13,14 @@
 }
 else
 {
-  <h3>Licensed to Repair:</h3>
+  <h3>Repair Licenses:</h3>
   @foreach(RepairLicense join in Model.JoinEntities)
   {
-    <h3>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId })</h3>
+    <h4>@Html.ActionLink($"{join.Machine.MachineName}", "Details", "Machines", new { id = join.Machine.MachineId })</h4>
     @using (Html.BeginForm("DeleteMachine", "Engineers"))
     {
       @Html.Hidden("joinId", @join.RepairLicenseId)
-      <input type="submit" value="Unlicense"/><br><br>
+      <input type="submit" value="Remove"/><br><br>
     }
   }
 }

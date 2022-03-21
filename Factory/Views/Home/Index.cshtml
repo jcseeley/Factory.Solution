@@ -21,9 +21,12 @@ else
   @foreach (Engineer engineer in @ViewBag.Engineers)
   {
     <h4>@Html.ActionLink($"{engineer.EngineerName}", "Details", "Engineers", new { id = engineer.EngineerId })</h4>
+    @foreach (RepairLicense license in engineer.JoinEntities)
+    {
+      <p>@license.Machine.MachineName @Html.ActionLink("view", "Details", "Machines", new { id = license.Machine.MachineId })</p>
+    }
   }
 }
-<hr/>
 <br>
 
 <h2>Machines:</h2>
@@ -37,6 +40,9 @@ else
   @foreach (Machine machine in @ViewBag.Machines)
   {
     <h4>@Html.ActionLink($"{machine.MachineName}", "Details", "Machines", new { id = machine.MachineId })</h4>
+    @foreach (RepairLicense license in machine.JoinEntities)
+    {
+      <p>@license.Engineer.EngineerName @Html.ActionLink("view", "Details", "Engineers", new { id = license.Engineer.EngineerId })</p>
+    }
   }
 }
-<hr/>
