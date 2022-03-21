@@ -8,7 +8,7 @@ namespace Factory.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "engineers",
+                name: "Engineers",
                 columns: table => new
                 {
                     EngineerId = table.Column<int>(type: "int", nullable: false)
@@ -17,11 +17,11 @@ namespace Factory.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_engineers", x => x.EngineerId);
+                    table.PrimaryKey("PK_Engineers", x => x.EngineerId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "machines",
+                name: "Machines",
                 columns: table => new
                 {
                     MachineId = table.Column<int>(type: "int", nullable: false)
@@ -30,11 +30,11 @@ namespace Factory.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_machines", x => x.MachineId);
+                    table.PrimaryKey("PK_Machines", x => x.MachineId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "repair_licenses",
+                name: "RepairLicenses",
                 columns: table => new
                 {
                     RepairLicenseId = table.Column<int>(type: "int", nullable: false)
@@ -44,42 +44,42 @@ namespace Factory.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_repair_licenses", x => x.RepairLicenseId);
+                    table.PrimaryKey("PK_RepairLicenses", x => x.RepairLicenseId);
                     table.ForeignKey(
-                        name: "FK_repair_licenses_engineers_EngineerId",
+                        name: "FK_RepairLicenses_Engineers_EngineerId",
                         column: x => x.EngineerId,
-                        principalTable: "engineers",
+                        principalTable: "Engineers",
                         principalColumn: "EngineerId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_repair_licenses_machines_MachineId",
+                        name: "FK_RepairLicenses_Machines_MachineId",
                         column: x => x.MachineId,
-                        principalTable: "machines",
+                        principalTable: "Machines",
                         principalColumn: "MachineId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_repair_licenses_EngineerId",
-                table: "repair_licenses",
+                name: "IX_RepairLicenses_EngineerId",
+                table: "RepairLicenses",
                 column: "EngineerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_repair_licenses_MachineId",
-                table: "repair_licenses",
+                name: "IX_RepairLicenses_MachineId",
+                table: "RepairLicenses",
                 column: "MachineId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "repair_licenses");
+                name: "RepairLicenses");
 
             migrationBuilder.DropTable(
-                name: "engineers");
+                name: "Engineers");
 
             migrationBuilder.DropTable(
-                name: "machines");
+                name: "Machines");
         }
     }
 }
