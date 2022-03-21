@@ -25,18 +25,6 @@ A user friendly web application for factory operators to track their engineers a
 
 * Clone this repository to your desktop.
 
-### Import the Database:
-1. Open MySQLWorkbench and click "Local instance 3306".
-2. Expand the window to uncover any hidden buttons.
-3. Under the "Administration" tab, click "Data Import/Restore".
-4. Select "Import from Self-Contained file".
-5. To the right of the form field, click the box with ".." in it and navigate to the top level of this directory. Select the "jase_seeley.sql" file.
-6. Under "Default Target Schema", click the "New..." button, enter "jase_seeley" as the schema name and click "OK". Alternatively, you may name this whatever you prefer but make sure it matches the "database" name in the "appsettings.json" file. (See below)
-7. Click the "Start Import" button.
-8. When the import is complete, navigate to the "Schemas" tab.
-9. Right click under the list of schemas and select "Refresh All".
-10. Your new schema should now appear on the list.
-
 ### Add the "appsettings.json" file:
 1. Open the "Factory.Solution" folder in your code editor.
 2. Right click on the "Factory" project folder and select "New File".
