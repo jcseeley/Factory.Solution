@@ -46,7 +46,6 @@ A user friendly web application for factory operators to track their engineers a
 * Navigate to the "Factory" project directory in your terminal.
 * Enter "dotnet restore" to install the required packages.
 * Enter "dotnet build" to build the project.
-* Enter "dotnet ef migrations add Initial" to create your migration file.
 * Enter "dotnet ef database update" to build the database.
 * To use the application, enter "dotnet run" and visit "http://localhost:5000/" in your browser.
 * When finished, press "CTRL + C" in your terminal to close the application.
