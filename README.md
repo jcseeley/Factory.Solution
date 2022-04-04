@@ -2,7 +2,8 @@
 
 #### By Jase Seeley
 
-#### A web application to track your engineers and the equipment they repair.
+#### Epicodus Week #11 Independent Code Review: Many-to-Many Relationships   
+* A web application to track your engineers and the equipment they repair.
 
 ## Technologies Used
 * C#
